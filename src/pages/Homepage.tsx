@@ -7,9 +7,11 @@ function HomePage() {
   const [search, setSearch] = useState('')
   const [countyFilter, setCountyFilter] = useState('All')
   const [typeFilter, setTypeFilter] = useState('All')
+  const [sortBy, setSortBy] = useState('default')
 
   const counties = ['All', ...Array.from(new Set(universities.map(u => u.county))).sort()]
   const types = ['All', 'Public', 'Private', 'Technical']
+  
 
   const filtered: University[] = universities.filter(u => {
     const matchesSearch =
@@ -18,6 +20,23 @@ function HomePage() {
     const matchesCounty = countyFilter === 'All' || u.county === countyFilter
     const matchesType = typeFilter === 'All' || u.type === typeFilter
     return matchesSearch && matchesCounty && matchesType
+  })
+
+  const sorted = [...filtered].sort((a, b) => {
+    switch (sortBy) {
+      case 'name':
+        return a.name.localeCompare(b.name)
+      case 'fees-low':
+        return a.fees_per_year - b.fees_per_year
+      case 'fees-high':
+        return b.fees_per_year - a.fees_per_year
+      case 'cutoff-low':
+        return a.cutoff - b.cutoff
+      case 'cutoff-high':
+        return b.cutoff - a.cutoff
+      default:
+        return 0
+    }
   })
 
   return (
@@ -48,6 +67,19 @@ function HomePage() {
           </select>
 
           <select
+            value={sortBy}
+              onChange={e => setSortBy(e.target.value)}
+            className="filter-select"
+>
+            <option value="default">Sort: Default</option>
+            <option value="name">Name (A-Z)</option>
+            <option value="fees-low">Fees: Low to High</option>
+            <option value="fees-high">Fees: High to Low</option>
+            <option value="cutoff-low">Cutoff: Low to High</option>
+            <option value="cutoff-high">Cutoff: High to Low</option>
+          </select>
+
+          <select
             value={typeFilter}
             onChange={e => setTypeFilter(e.target.value)}
             className="filter-select"
@@ -59,10 +91,10 @@ function HomePage() {
         </div>
       </div>
 
-      <p className="results-count">{filtered.length} universities found</p>
+      <p className="results-count">{sorted.length} universities found</p>
 
       <div className="grid">
-        {filtered.map(u => (
+        {sorted.map(u => (
           <Link key={u.id} to={`/university/${u.id}`} className="card-link">
             <div className="card">
               <div className="card-header">
