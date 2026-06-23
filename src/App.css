@@ -121,6 +121,12 @@ body {
   line-height: 1.4;
 }
 
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 /* Badges */
 .badge {
   font-size: 0.7rem;
@@ -179,6 +185,13 @@ body {
 
 .visit-link:hover {
   text-decoration: underline;
+}
+
+/*Back link*/
+.back-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 /* Empty state */
