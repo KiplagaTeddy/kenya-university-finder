@@ -209,5 +209,125 @@ export const universities: University[] = [
     cutoff: 29,
     fees_per_year: 16000,
     website: "https://www.chuka.ac.ke"
+  },
+  {
+    id: 21,
+    name: "Technical University of Mombasa",
+    county: "Mombasa",
+    type: "Technical",
+    courses: ["Engineering", "Business", "Applied Sciences", "Computer Science", "Built Environment"],
+    cutoff: 31,
+    fees_per_year: 16000,
+    website: "https://www.tum.ac.ke"
+  },
+  {
+    id: 22,
+    name: "Kenyatta University - Mombasa Campus",
+    county: "Mombasa",
+    type: "Public",
+    courses: ["Business", "Education", "Nursing", "Computer Science"],
+    cutoff: 30,
+    fees_per_year: 16000,
+    website: "https://www.ku.ac.ke"
+  },
+  {
+    id: 23,
+    name: "Kisii University",
+    county: "Kisii",
+    type: "Public",
+    courses: ["Medicine", "Law", "Business", "Computer Science", "Agriculture"],
+    cutoff: 33,
+    fees_per_year: 16000,
+    website: "https://www.kisiiuniversity.ac.ke"
+  },
+  {
+    id: 24,
+    name: "Kisii University - Nyamira Campus",
+    county: "Nyamira",
+    type: "Public",
+    courses: ["Business", "Education", "Science"],
+    cutoff: 28,
+    fees_per_year: 16000,
+    website: "https://www.kisiiuniversity.ac.ke"
+  },
+  {
+    id: 25,
+    name: "Machakos University",
+    county: "Machakos",
+    type: "Public",
+    courses: ["Business", "Education", "Science", "Engineering", "Agriculture"],
+    cutoff: 30,
+    fees_per_year: 16000,
+    website: "https://www.mksu.ac.ke"
+  },
+  {
+    id: 26,
+    name: "Lukenya University",
+    county: "Machakos",
+    type: "Private",
+    courses: ["Business", "Education", "Computer Science", "Theology"],
+    cutoff: 26,
+    fees_per_year: 75000,
+    website: "https://www.lukenyauniversity.ac.ke"
+  },
+  {
+    id: 27,
+    name: "University of Eldoret",
+    county: "Uasin Gishu",
+    type: "Public",
+    courses: ["Education", "Agriculture", "Science", "Natural Resources", "Business"],
+    cutoff: 31,
+    fees_per_year: 16000,
+    website: "https://www.uoeld.ac.ke"
+  },
+  {
+    id: 28,
+    name: "Moi University - Eldoret Town Campus",
+    county: "Uasin Gishu",
+    type: "Public",
+    courses: ["Law", "Business", "Education", "Computer Science"],
+    cutoff: 32,
+    fees_per_year: 16000,
+    website: "https://www.mu.ac.ke"
+  },
+  {
+    id: 29,
+    name: "Garissa University",
+    county: "Garissa",
+    type: "Public",
+    courses: ["Education", "Business", "Science", "Agriculture"],
+    cutoff: 27,
+    fees_per_year: 16000,
+    website: "https://www.gau.ac.ke"
+  },
+  {
+    id: 30,
+    name: "University of Embu",
+    county: "Embu",
+    type: "Public",
+    courses: ["Agriculture", "Business", "Science", "Education", "Engineering"],
+    cutoff: 29,
+    fees_per_year: 16000,
+    website: "https://www.embuni.ac.ke"
+  },
+  {
+    id: 31,
+    name: "Kenya Methodist University - Embu Campus",
+    county: "Embu",
+    type: "Private",
+    courses: ["Business", "Health Sciences", "Education"],
+    cutoff: 28,
+    fees_per_year: 95000,
+    website: "https://www.kemu.ac.ke"
+  },
+  {
+    id: 32,
+    name: "Kisii National Polytechnic",
+    county: "Kisii",
+    type: "Technical",
+    courses: ["Engineering", "Building Technology", "Applied Sciences", "Business"],
+    cutoff: 22,
+    fees_per_year: 30000,
+    website: "https://www.kisiipoly.ac.ke"
   }
 ]
