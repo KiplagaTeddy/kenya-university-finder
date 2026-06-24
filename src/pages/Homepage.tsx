@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { universities, type University } from '../data/universities'
+import { highlightMatch } from '../utils/highlightMatch'
 import '../App.css'
 
 function HomePage() {
@@ -16,6 +17,7 @@ function HomePage() {
   const filtered: University[] = universities.filter(u => {
     const matchesSearch =
       u.name.toLowerCase().includes(search.toLowerCase()) ||
+      u.county.toLowerCase().includes(search.toLowerCase()) ||
       u.courses.some(c => c.toLowerCase().includes(search.toLowerCase()))
     const matchesCounty = countyFilter === 'All' || u.county === countyFilter
     const matchesType = typeFilter === 'All' || u.type === typeFilter
@@ -98,15 +100,15 @@ function HomePage() {
           <Link key={u.id} to={`/university/${u.id}`} className="card-link">
             <div className="card">
               <div className="card-header">
-                <h2>{u.name}</h2>
+                <h2>{highlightMatch(u.name, search)}</h2>
                 <span className={`badge badge-${u.type.toLowerCase()}`}>{u.type}</span>
               </div>
-              <p className="county">📍 {u.county} County</p>
+              <p className="county">📍 {highlightMatch(u.county, search)}</p>
               <p className="fees">Fees: Ksh {u.fees_per_year.toLocaleString()} / year</p>
               <p className="cutoff">Min cutoff: {u.cutoff} points</p>
               <div className="courses">
                 {u.courses.map(c => (
-                  <span key={c} className="course-tag">{c}</span>
+                  <span key={c} className="course-tag">{highlightMatch(c, search)}</span>
                 ))}
               </div>
             </div>
