@@ -187,6 +187,11 @@ body {
   text-decoration: underline;
 }
 
+.visit-link-unavailable {
+  color: #464343;
+  font-style: italic;
+}
+
 /*Back link*/
 .back-link {
   text-decoration: none;

@@ -37,9 +37,13 @@ function UniversityDetailPage() {
         ))}
       </div>
 
-      <a href={university.website} target="_blank" rel="noreferrer" className="visit-link">
-        Visit website →
-      </a>
+      {university.website ? (
+        <a href={university.website} target="_blank" rel="noreferrer" className="visit-link">
+          Visit website →
+        </a>
+      ) : (
+        <span className="visit-link-unavailable">Website not yet available</span>
+    )}
     </div>
   )
 }

@@ -329,5 +329,185 @@ export const universities: University[] = [
     cutoff: 22,
     fees_per_year: 30000,
     website: "https://www.kisiipoly.ac.ke"
+  },
+  {
+    id: 33,
+    name: "University of Kabianga",
+    county: "Kericho",
+    type: "Public",
+    courses: ["Education", "Business", "Science", "Agriculture", "Natural Resources"],
+    cutoff: 29,
+    fees_per_year: 16000,
+    website: "https://www.kabianga.ac.ke"
+  },
+  {
+    id: 34,
+    name: "Kenya Highlands University",
+    county: "Kericho",
+    type: "Private",
+    courses: ["Theology", "Business", "Computer Science", "Education"],
+    cutoff: 24,
+    fees_per_year: 75000,
+    website: "https://khu.ac.ke"
+  },
+  {
+    id: 35,
+    name: "Rongo University",
+    county: "Migori",
+    type: "Public",
+    courses: ["Agriculture", "Business", "Education", "Science", "Engineering"],
+    cutoff: 28,
+    fees_per_year: 16000,
+    website: "https://www.rongovarsity.ac.ke"
+  },
+  {
+    id: 36,
+    name: "Kaimosi Friends University",
+    county: "Vihiga",
+    type: "Public",
+    courses: ["Education", "Business", "Health Sciences", "Science"],
+    cutoff: 27,
+    fees_per_year: 16000,
+    website: "https://kafu.ac.ke"
+  },
+  {
+    id: 37,
+    name: "Alupe University",
+    county: "Busia",
+    type: "Public",
+    courses: ["Health Sciences", "Education", "Business", "Engineering"],
+    cutoff: 26,
+    fees_per_year: 16000,
+    website: "https://www.alupeuniversity.ac.ke"
+  },
+  {
+    id: 38,
+    name: "Bomet University",
+    county: "Bomet",
+    type: "Public",
+    courses: ["Agriculture", "Business", "Education"],
+    cutoff: 25,
+    fees_per_year: 16000,
+    website: "https://buc.ac.ke"
+  },
+  {
+    id: 39,
+    name: "Tom Mboya University",
+    county: "Homa Bay",
+    type: "Public",
+    courses: ["Education", "Business", "Science"],
+    cutoff: 25,
+    fees_per_year: 16000,
+    website: "https://www.tmu.ac.ke"
+  },
+  {
+    id: 40,
+    name: "Turkana University College",
+    county: "Turkana",
+    type: "Public",
+    courses: ["Business", "Education", "Science", "Human Evolutionary Biology"],
+    cutoff: 22,
+    fees_per_year: 16000,
+    website: "https://tuc.ac.ke"
+  },
+  {
+    id: 41,
+    name: "Koitaleel Samoei University College",
+    county: "Nandi",
+    type: "Public",
+    courses: ["Education", "Business", "Sports Science"],
+    cutoff: 23,
+    fees_per_year: 16000,
+    website: "https://ksu.ac.ke"
+  },
+  {
+    id: 42,
+    name: "Nyandarua University College",
+    county: "Nyandarua",
+    type: "Public",
+    courses: ["Education", "Business", "Agriculture"],
+    cutoff: 23,
+    fees_per_year: 16000,
+    website: "" // no live website yet — too new, still under UoN mentorship as of 2026
+  },
+  {
+    id: 43,
+    name: "Kabarnet University College",
+    county: "Baringo",
+    type: "Public",
+    courses: ["Education", "Business", "Science"],
+    cutoff: 23,
+    fees_per_year: 16000,
+    website: "https://kuc.mu.ac.ke"
+  },
+  {
+    id: 44,
+    name: "Makueni University College",
+    county: "Makueni",
+    type: "Public",
+    courses: ["Business", "Education", "Agriculture"],
+    cutoff: 24,
+    fees_per_year: 16000,
+    website: "https://www.muco.ac.ke"
+  },
+  {
+    id: 45,
+    name: "Kenyatta University - Kitui Campus",
+    county: "Kitui",
+    type: "Public",
+    courses: ["Education", "Business", "Nursing"],
+    cutoff: 26,
+    fees_per_year: 16000,
+    website: "https://www.ku.ac.ke"
+  },
+  {
+    id: 46,
+    name: "Kirinyaga University",
+    county: "Kirinyaga",
+    type: "Public",
+    courses: ["Engineering", "Business", "Education", "Computer Science"],
+    cutoff: 29,
+    fees_per_year: 16000,
+    website: "https://www.kyu.ac.ke"
+  },
+  {
+    id: 47,
+    name: "Murang'a University of Technology",
+    county: "Murang'a",
+    type: "Public",
+    courses: ["Engineering", "Computer Science", "Business", "Applied Sciences"],
+    cutoff: 30,
+    fees_per_year: 16000,
+    website: "https://www.mut.ac.ke"
+  },
+  {
+    id: 48,
+    name: "Taita Taveta University",
+    county: "Taita Taveta",
+    type: "Public",
+    courses: ["Engineering", "Science", "Business", "Mining Engineering"],
+    cutoff: 28,
+    fees_per_year: 16000,
+    website: "https://www.ttu.ac.ke"
+  },
+  {
+    id: 49,
+    name: "Maasai Mara University",
+    county: "Narok",
+    type: "Public",
+    courses: ["Tourism Management", "Business", "Education", "Science"],
+    cutoff: 30,
+    fees_per_year: 16000,
+    website: "https://www.mmarau.ac.ke"
+  },
+  {
+    id: 50,
+    name: "Jaramogi Oginga Odinga University of Science and Technology",
+    county: "Siaya",
+    type: "Public",
+    courses: ["Science", "Engineering", "Business", "Agriculture"],
+    cutoff: 31,
+    fees_per_year: 16000,
+    website: "https://www.jooust.ac.ke"
   }
 ]
