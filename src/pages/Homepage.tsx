@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { universities, type University } from '../data/universities'
+import { type University } from '../data/universities'
 import { highlightMatch } from '../utils/highlightMatch'
 import '../App.css'
 
@@ -9,6 +9,28 @@ function HomePage() {
   const [countyFilter, setCountyFilter] = useState('All')
   const [typeFilter, setTypeFilter] = useState('All')
   const [sortBy, setSortBy] = useState('default')
+
+  const [universities, setUniversities] = useState<University[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    fetch('/universities.json')
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`Failed to load universities: ${res.status}`)
+        }
+        return res.json()
+      })
+      .then((data: University[]) => {
+        setUniversities(data)
+        setLoading(false)
+      })
+      .catch(err => {
+        setError(err.message)
+        setLoading(false)
+      })
+  }, [])
 
   const counties = ['All', ...Array.from(new Set(universities.map(u => u.county))).sort()]
   const types = ['All', 'Public', 'Private', 'Technical']
@@ -48,6 +70,13 @@ function HomePage() {
         <h1>🎓 Kenya University Finder</h1>
         <p>Search universities by name, course, county or type</p>
       </header>
+      
+      {loading ? (
+        <div className="loading">Loading universities...</div>
+      ) : error ? (
+        <div className="error">Error: {error}</div>
+      ) : (
+        <>
 
       <div className="controls">
         <input
@@ -121,7 +150,9 @@ function HomePage() {
           <p>No universities match your search. Try different filters.</p>
         </div>
       )}
-
+    </>
+      )}
+      
     </div>
   )
 }

@@ -1,10 +1,49 @@
+import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { universities } from '../data/universities'
+import { type University } from '../data/universities'
 import '../App.css'
 
 function UniversityDetailPage() {
   const { id } = useParams()
-  const university = universities.find(u => u.id === Number(id))
+  const [university, setUniversity] = useState<University | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    fetch('/universities.json')
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`Failed to load universities: ${res.status}`)
+        }
+        return res.json()
+      })
+      .then((data: University[]) => {
+        const found = data.find(u => u.id === Number(id))
+        setUniversity(found ?? null)
+        setLoading(false)
+      })
+      .catch(err => {
+        setError(err.message)
+        setLoading(false)
+      })
+  }, [id])
+
+  if (loading) {
+    return (
+      <div className="app">
+        <p className="loading">Loading university...</p>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="app">
+        <p className="error">⚠️ {error}</p>
+        <Link to="/" className="back-link">← Back to search</Link>
+      </div>
+    )
+  }
 
   if (!university) {
     return (
@@ -43,7 +82,7 @@ function UniversityDetailPage() {
         </a>
       ) : (
         <span className="visit-link-unavailable">Website not yet available</span>
-    )}
+      )}
     </div>
   )
 }
